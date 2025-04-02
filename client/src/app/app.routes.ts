@@ -3,7 +3,10 @@ import { ListsComponent } from './lists/lists.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { Routes } from '@angular/router';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { authGuard } from './_guards/auth.guard';
 
 export const routes: Routes = [
@@ -22,5 +25,8 @@ export const routes: Routes = [
       { path: 'messages', component: MessagesComponent },
     ],
   },
+  {path: 'errors', component: TestErrorsComponent},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: 'server-error', component: ServerErrorComponent},
   { path: '**', component: HomeComponent, pathMatch: 'full' },
 ];
